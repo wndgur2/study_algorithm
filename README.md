@@ -5,6 +5,7 @@
 이 프로젝트에는 코드만 올라오고,
 문제 분석 및 풀이는 개인 블로그에서 진행합니다.
 
+
 ## 개인 블로그
 https://velog.io/@publicminsu
 
@@ -13,3 +14,8 @@ https://velog.io/@onenewarm
 https://velog.io/@qkrwntjdrns
 
 https://blog.naver.com/wndgur76
+
+
+
+메모
+- 사진찍기
