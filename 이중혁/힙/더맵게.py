@@ -8,4 +8,4 @@ def solution(scoville, K):
         answer += 1
     if scoville[0]<K:
         return -1
-    return answer
+    return answer   
