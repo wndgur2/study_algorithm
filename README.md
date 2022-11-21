@@ -19,4 +19,4 @@ https://blog.naver.com/wndgur76
 
 메모
 - 사진찍기
-![단체사진](~img/KakaoTalk_Photo_2022-11-21-16-03-38.jpeg)
+![단체사진](./img/KakaoTalk_Photo_2022-11-21-16-03-38.jpeg)
