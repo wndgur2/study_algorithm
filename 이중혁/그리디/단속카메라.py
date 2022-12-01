@@ -13,7 +13,6 @@
     경우#3
     ABBA endB를 저장
 '''
-from collections import deque
 
 def solution(routes):
     answer = 0
