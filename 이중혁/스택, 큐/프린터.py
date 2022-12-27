@@ -5,7 +5,6 @@ def solution(priorities, location):
     
     for pI in range(lenPriorities):
         locs[priorities[pI]].append(pI)
-    
     index = 0
     for p in range(9, priorities[location]-1, -1):
         for loc in locs[p]:
