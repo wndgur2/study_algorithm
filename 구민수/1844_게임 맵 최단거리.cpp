@@ -20,7 +20,6 @@ int solution(vector<vector<int>> maps)
             if (next.first == maps.size() - 1 && next.second == maps[next.first].size() - 1)
             {
                 return maps[cur.first][cur.second] + 1;
-                ;
             }
             else
             {
