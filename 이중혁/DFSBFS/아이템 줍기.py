@@ -9,7 +9,7 @@
 from collections import deque
 def solution(rectangle, characterX, characterY, itemX, itemY):
     answer = 0
-    mapTable = [[0 for _ in range(51*2)] for __ in range(51*2)]
+    mapTable = [[0 for _ in range(51)] for __ in range(51)]
     for r in rectangle:
         x1, y1, x2, y2 = r
         x1 *= 2
@@ -30,6 +30,8 @@ def solution(rectangle, characterX, characterY, itemX, itemY):
             for x in range(x1+1, x2):
                 mapTable[y][x] = 2
     
+    for m in mapTable:
+        print(m)
     #BFS
     q = deque([(characterX*2, characterY*2, 1)])
     while q:
@@ -45,5 +47,5 @@ def solution(rectangle, characterX, characterY, itemX, itemY):
             q.append((x, y-1, cost+1))
         if mapTable[y+1][x]==1:
             q.append((x, y+1, cost+1))
-
     return answer
+print(solution([[1,1,7,4],[3,2,5,5],[4,3,6,9],[2,6,8,8]],1,3,7,8))
