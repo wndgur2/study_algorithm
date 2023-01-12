@@ -22,8 +22,7 @@ int solution(int distance, vector<int> rocks, int n)
         }
         else
         {
-            if (answer < mid)
-                answer = mid;
+            answer = mid;
             low = mid + 1;
         }
     }
