@@ -15,6 +15,8 @@ https://velog.io/@qkrwntjdrns
 
 https://blog.naver.com/wndgur76
 
+https://velog.io/@i_am_gr00t
+
 
 
 메모
