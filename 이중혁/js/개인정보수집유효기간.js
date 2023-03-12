@@ -20,9 +20,8 @@ function solution(today, terms, privacies) {
         [date, name] = priv.split(' ');
         days = cal_days(date);
         dif_days = today_days - days;
-        if (term_dict[name] * 28 <= dif_days) {
+        if (term_dict[name] * 28 <= dif_days)
             answer.push(index + 1);
-        }
     })
     return answer;
 }

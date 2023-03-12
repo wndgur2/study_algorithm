@@ -11,35 +11,35 @@
 // 매번 위에있는 0은 걷어내야할 것이다.
 
 function solution(cap, n, deliveries, pickups) {
-  var answer = 0;
+    var answer = 0;
 
-  while (deliveries[deliveries.length - 1] == 0)
-    deliveries.pop();
-  while (pickups[pickups.length - 1] == 0)
-    pickups.pop();
+    while (deliveries[deliveries.length - 1] == 0)
+        deliveries.pop();
+    while (pickups[pickups.length - 1] == 0)
+        pickups.pop();
 
-  while (deliveries.length > 0 || pickups.length > 0) {
-    temp_cap = cap;
-    answer += deliveries.length > pickups.length ? deliveries.length * 2 : pickups.length * 2;
-    while (temp_cap > 0 || deliveries[deliveries.length - 1] == 0) {
-      if (deliveries[deliveries.length - 1] <= temp_cap) {
-        temp_cap -= deliveries.pop();
-      } else if (temp_cap > 0) {
-        deliveries[deliveries.length - 1] -= temp_cap;
-        temp_cap = 0;
-      }
+    while (deliveries.length > 0 || pickups.length > 0) {
+        temp_cap = cap;
+        answer += deliveries.length > pickups.length ? deliveries.length * 2 : pickups.length * 2;
+        while (temp_cap > 0 || deliveries[deliveries.length - 1] == 0) {
+            if (deliveries[deliveries.length - 1] <= temp_cap) {
+                temp_cap -= deliveries.pop();
+            } else if (temp_cap > 0) {
+                deliveries[deliveries.length - 1] -= temp_cap;
+                temp_cap = 0;
+            }
+        }
+        temp_cap = cap;
+        while (temp_cap > 0 || pickups[pickups.length - 1] == 0) {
+            if (pickups[pickups.length - 1] <= temp_cap) {
+                temp_cap -= pickups.pop();
+            } else if (temp_cap > 0) {
+                pickups[pickups.length - 1] -= temp_cap;
+                temp_cap = 0;
+            }
+        }
     }
-    temp_cap = cap;
-    while (temp_cap > 0 || pickups[pickups.length - 1] == 0) {
-      if (pickups[pickups.length - 1] <= temp_cap) {
-        temp_cap -= pickups.pop();
-      } else if (temp_cap > 0) {
-        pickups[pickups.length - 1] -= temp_cap;
-        temp_cap = 0;
-      }
-    }
-  }
-  return answer;
+    return answer;
 }
 
 console.log(solution(6, 5, [1, 0, 3, 1, 2], [0, 3, 0, 4, 0]));
