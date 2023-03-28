@@ -20,5 +20,5 @@ https://velog.io/@i_am_gr00t
 
 
 메모
-- 사진찍기
+- 사진찍기 2022.11.21
 ![단체사진](./img/KakaoTalk_Photo_2022-11-21-16-03-38.jpeg)
