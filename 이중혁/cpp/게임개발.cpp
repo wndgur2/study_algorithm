@@ -39,9 +39,9 @@ int main(){
     struct Building *buildings = (struct Building*)malloc(sizeof(struct Building)*n);
     // 선행조건 연결
     for(i=0; i<n; i++){ 
+        // 초기화
         buildings[i].number = i+1;
         buildings[i].in_degree = 0;
-        buildings[i].head = NULL;
         buildings[i].visit = false;
         scanf("%d", &buildings[i].time_to_build);
         buildings[i].max_time_to_build = buildings[i].time_to_build;
