@@ -57,11 +57,9 @@ void push(struct Node *queue, int newIdx){
         struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
         newNode->idx = queue->idx;
         newNode->next = queue->next;
-        queue->idx = newIdx;
         queue->next = newNode;
-    } else{
-        queue->idx = newIdx;
     }
+    queue->idx = newIdx;
 }
 
 
