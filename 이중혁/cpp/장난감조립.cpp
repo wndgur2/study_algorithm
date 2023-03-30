@@ -72,6 +72,7 @@ int main(){
                     components[temp->number-1].in_degree --;
                     temp = popNode(&components[i]);
                 }
+                components[i].visit = true;
             }
         }
     }
