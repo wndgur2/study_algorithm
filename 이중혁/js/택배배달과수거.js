@@ -41,6 +41,7 @@ function solution(cap, n, deliveries, pickups) {
     }
     return answer;
 }
+console.log(solution(3, 4, [1, 2, 3, 4], [0, 0, 0, 0]));
 
 console.log(solution(6, 5, [1, 0, 3, 1, 2], [0, 3, 0, 4, 0]));
 console.log(solution(2, 7, [1, 0, 2, 0, 1, 0, 2], [0, 2, 0, 1, 0, 2, 0])); 
