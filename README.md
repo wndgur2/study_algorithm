@@ -7,18 +7,17 @@
 
 
 ## 개인 블로그
-https://velog.io/@publicminsu
+구민수 https://velog.io/@publicminsu
 
-https://velog.io/@onenewarm
+김원래 https://velog.io/@onenewarm
 
-https://velog.io/@qkrwntjdrns
+박주성 https://velog.io/@qkrwntjdrns
 
-https://blog.naver.com/wndgur76
+이중혁 https://blog.naver.com/wndgur76
 
-https://velog.io/@i_am_gr00t
-
+유규빈 https://velog.io/@i_am_gr00t
 
 
 메모
-- 사진찍기 2022.11.21 한경대학교 제1공학관 3층에서
+- 사진찍기 2022.11.21 제1공학관 3층에서
 ![단체사진](./img/KakaoTalk_Photo_2022-11-21-16-03-38.jpeg)
