@@ -7,6 +7,8 @@
 
 
 ## 개인 블로그
+강명조 https://velog.io/@ggob_2
+
 구민수 https://velog.io/@publicminsu
 
 김원래 https://velog.io/@onenewarm
