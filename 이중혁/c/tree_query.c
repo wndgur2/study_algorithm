@@ -48,7 +48,7 @@ int main(){
     // 노드 초기화
     struct Node_queue *links = (struct Node_queue*)malloc(sizeof(struct Node_queue) * (n+1));
     for(i=1; i<n+1; i++){
-        links[i].number = i;
+        links[i].number = 0;
         links[i].next = NULL;
     }
 
@@ -68,6 +68,7 @@ int main(){
         reversed_tree[i].visit = 0;
         reversed_tree[i].size = 1;
     }
+    
     struct Node_queue queue = {r, NULL};
     int tempA, tempB;
 
