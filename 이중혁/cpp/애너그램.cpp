@@ -21,7 +21,6 @@ void dfs(string s, int idx) {
 		dfs(s, idx + 1);
 	}
 }
-
 int main() {
 	int T;
 	scanf("%d", &T);
