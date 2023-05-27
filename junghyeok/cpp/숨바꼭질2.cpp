@@ -43,7 +43,7 @@ int main(){
             }
             
             new_position = before_position + 1;
-            if((new_position <= 100000) && (states[new_position] != 1)){
+            if((new_position <= X) && (states[new_position] != 1)){
                 visits.push_back(new_position);
                 if(states[new_position] == 2)
                     found_goal += 1;
@@ -52,7 +52,7 @@ int main(){
             }
 
             new_position = before_position *2;
-            if((new_position <= 100000) && (states[new_position] != 1)){
+            if((new_position <= X) && (states[new_position] != 1)){
                 visits.push_back(new_position);
                 if(states[new_position] == 2)
                     found_goal += 1;
