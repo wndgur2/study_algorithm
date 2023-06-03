@@ -9,3 +9,5 @@ settings.json
 !./junghyeok/*.*
 !./junghyeok/*/
 ./junghyeok/*/*.dSYM
+./junghyeok/*/test.*
+./junghyeok/*/tempCodeRunnerFile.*
