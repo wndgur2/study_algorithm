@@ -3,3 +3,7 @@
 settings.json
 .gitconfig
 .vscode
+
+./junghyeok/*
+!./junghyeok/*.*
+!./junghyeok/*/
