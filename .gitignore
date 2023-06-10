@@ -4,10 +4,3 @@ settings.json
 .gitconfig
 .vscode
 */a.out
-
-./junghyeok/*
-!./junghyeok/*.*
-!./junghyeok/*/
-./junghyeok/*/*.dSYM
-./junghyeok/*/test.*
-./junghyeok/*/tempCodeRunnerFile.*
