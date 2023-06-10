@@ -35,7 +35,7 @@ int main(){
     int answer = 0;
     for(int i=0; i<m; i++) // i: 누적합의 나머지
         // 누적합의 나머지가 같은 두 인덱스(두 인덱스는 구간합의 구간이 된다)를 중복 없이 뽑는 경우의 수
-        answer += (int)cnt[i]*(cnt[i]-1)/2; 
+        answer += (int)cnt[i]*(cnt[i]-1)/2;
 
     printf("%d\n", answer);
     return 0;

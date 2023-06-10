@@ -30,7 +30,6 @@ int main(){
         students[student][3] = d;
         order[i] = student;
     }
-
     for(int i=0; i<n*n; i++){ // 학생 순서대로 자리 배치
         int student = order[i];
         int x = -1, y = -1, max_like = -1, max_empty = -1;
