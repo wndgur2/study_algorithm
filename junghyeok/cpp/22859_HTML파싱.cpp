@@ -33,7 +33,7 @@ int main(){
     bool is_closing_tag = false;
     string temp_tag_name = "";
     string temp_title_name = "";
-    string temp_content = "";
+    string temp_conten  t = "";
 
     getline(cin, html);
     for(char a: html){
