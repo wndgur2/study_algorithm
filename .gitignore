@@ -1,8 +1,9 @@
-#git에 올리지 않을 파일을 적는 곳입니다.
+#git에 올리지 않을 파일
+
 .DS_Store
 settings.json
 .gitconfig
 .vscode
 */a.out
-*/*/*/a.out
 */*/a.out
+*/*/*/a.out
