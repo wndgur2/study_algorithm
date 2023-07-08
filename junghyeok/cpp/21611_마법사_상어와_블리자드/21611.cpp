@@ -4,6 +4,19 @@
 
 using namespace std;
 
+void 구슬파괴(vector<int> &marbles_, int direction, int scope){
+    int initial_increment[] = {7, 3, 1, 5}; // 상하좌우
+    int marble_index, cur_increment, j;
+
+    cur_increment = initial_increment[direction-1];
+    marble_index = initial_increment[direction-1];
+    for(j=0; j<scope; j++){
+        marbles_[marble_index] = 0;
+        cur_increment += 8;
+        marble_index += cur_increment;
+    }
+}
+
 void 구슬당기기(vector<int> &marbles_){
     int n = marbles_.size();
     marbles_.erase(remove(marbles_.begin()+1, marbles_.end(), 0), marbles_.end());
@@ -41,8 +54,6 @@ vector<int> 구슬변화(vector<int> &marbles_){
     int group_size = 0, cur_n = marbles_[1], k, l;
     for(k=1; k<max_size; ++k){ // 0번은 마법사 상어니까 1번부터
         if(marbles_[k] != cur_n){ // 그룹 생성됨
-            // new_marbles.push_back(group_size);
-            // new_marbles.push_back(cur_n);
             if(new_marbles.size() < max_size) new_marbles.push_back(group_size);
             else break;
             if(new_marbles.size() < max_size) new_marbles.push_back(cur_n);
@@ -72,13 +83,7 @@ int main(){
         for(j=0; j<N; ++j)
             cin >> table[i][j];
 
-    // for(auto a: table){
-    //     for(int b: a)
-    //         cout << b << ' ';
-    //     cout << endl;
-    // }
-
-    // 달팽이 모양을 1자로 펴서 저장하기
+    // 달팽이 모양 테이블을 1자로 펴서 1D로 저장하기
     int current_length = 0, side_length = 1, y = int(N/2), x = int(N/2), turn = 0;
     vector<vector<int>> directions = {{0, -1}, {1, 0}, {0, 1}, {-1, 0}}; // 좌하우상
     int i_dir = 0;
@@ -97,28 +102,14 @@ int main(){
         }
     }
 
-    int initial_increment[] = {7, 3, 1, 5}, marble_index, cur_increment; // 상하좌우
+    // 블리자드 맛좀 보소
     int D, S; // 방향, 거리
+
     for(i=0; i<M; ++i){
         cin >> D >> S;
-
-        // 구슬 파괴
-        cur_increment = initial_increment[D-1];
-        marble_index = initial_increment[D-1];
-        for(j=0; j<S; j++){
-            marbles[marble_index] = 0;
-            cur_increment += 8;
-            marble_index += cur_increment;
-        }
-
-        // cout << endl;
-        // for(int a : marbles) cout << a << ' ';
-        // cout << endl;
-
+        구슬파괴(marbles, D, S);
         구슬당기기(marbles);
-
         answer += 구슬폭발(marbles);
-
         marbles = 구슬변화(marbles);
     }
 
