@@ -10,6 +10,7 @@ void 구슬파괴(vector<int> &marbles_, int direction, int scope){
 
     cur_increment = initial_increment[direction-1];
     marble_index = initial_increment[direction-1];
+    
     for(j=0; j<scope; j++){
         marbles_[marble_index] = 0;
         cur_increment += 8;
