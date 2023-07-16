@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+
 using namespace std;
 
 vector<vector<int>> d = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
@@ -31,7 +32,6 @@ int DFS(int y, int x, int h, int w, int point, vector<char> visits, vector<vecto
             }  
         }
     }
-
     return maxPoint;
 }
 
