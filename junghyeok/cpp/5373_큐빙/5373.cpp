@@ -59,8 +59,7 @@ void rotate_cube(char side_char, char direction){
     cube[side] = new_side;
 
     // 돌린 면의 좌, 상, 우, 하 면의 돌린 면과 닿는 열을 옆 면의 열로 변경
-    switch (side)
-    {
+    switch (side){
     case 0:
         // 2r0 > 4r0 > 3r2 > 5r0
         if(direction == '+'){
