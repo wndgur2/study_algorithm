@@ -6,6 +6,8 @@ vector<vector<int>> map;
 vector<vector<bool>> isCross;
 vector<vector<pii>> bishop; // bishop[0]과 bishop[1]에 흑, 백칸의 좌표 저장
 int n;
+
+// 중복 걱정이 없는 이유. len이 0부터 증가하기 때문에 현재 len 이전의 비숍들은 이미 결정됨. 그래서 2^20?
 void dfs(int len, int depth, vector<pii> &v, int &ret)
 {
     ret = max(depth, ret);

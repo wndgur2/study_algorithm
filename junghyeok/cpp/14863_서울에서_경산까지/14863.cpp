@@ -8,7 +8,7 @@
  * 
  * 기타 배운점
  *  DP 중에서도 클래식한 문제?인데 처음에 이상하게 풀었다.
- *  DP 사용 이점을 기억하면 될듯( 한번 얻은 결과를 이용한다는 것 )
+ *  DP 사용 이점을 기억하기( 한번 얻은 결과를 이용한다는 것 )
  * 
  *  struct를 써서 코드 가독성을 높일 수 있다. 시간은 820 -> 868로 조금 늘었다.
  *  unordered_map은 이점이 확실한 경우 말고는 쓰지 않는게 좋다. 그냥 배열보다 메모리는 4배, 시간은 10배 정도 들었다.
@@ -21,14 +21,14 @@
 
 using namespace std;
 
-struct section{
+struct section{ //구간
     int walk_cost;
     int walk_reward;
     int bike_cost;
     int bike_reward;
 };
 
-int N, K, i, result=0;
+int N, K, i;
 vector<vector<int>> DP;
 vector<section> sections;
 
