@@ -1,25 +1,20 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main(){
-    vector<int> a = {1, 2, 3};
-    vector<int> b = a;
-    b[0] = 0;
-    cout << "A: ";
-    for(int i: a){
-        cout << i << ' ';
+    vector<vector<vector<int>>> a = {{{}}};
+    
+    sort(a[0][0].begin(), a[0][0].end());
+
+    // while(a[0][0].size() > 2){
+    //     a[0][0].pop_back();
+    // }
+    for(auto t: a[0][0]){
+        cout << t << ' ';
     }
-    cout << endl << "B: ";
-    for(int i: b){
-        cout << i << ' ';
-    }
-    a = b;
-    b[0] = 100;
-    cout << "A: ";
-    for(int i: a){
-        cout << i << ' ';
-    }
+    // cout << a[0][0].back() << endl;
 
     return 0;
 }
