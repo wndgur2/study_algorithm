@@ -10,7 +10,7 @@ using namespace std;
  * M: 나무 개수
  * K: 보낼 기간(년)
  * 
- * 봄: 나무가 나이만큼 양분을 먹고 나이가 들거나, 양분을 먹지 못하고 양분이 된다. (어린 나무부터)
+ * 봄: 나무가 나이만큼 양분을 먹고 나이가 들거나, 양분을 먹지 못하고 죽는다. (어린 나무부터)
  * 여름: 죽은 나무의 나이/2가 해당 칸의 양분으로 변한다.
  * 가을: 나이가 5의 배수인 나무가 주변 8칸에 나이 1인 나무를 생성한다.
  * 겨울: 주어진 배열만큼 양분을 뿌린다.
@@ -66,7 +66,7 @@ void fall(){
                 for(pair<int, int> d: ds){
                     int newY = y+d.first,
                     newX = x+d.second;
-                    if(newX < 0 || newX >= N || newY < 0 || newY >= N) continue;
+                    if(newX<0 || newX>=N || newY<0 || newY>=N) continue;
                     trees[newY][newX].push_back(1);
                 }
             }
@@ -83,6 +83,7 @@ int main(){
     cin >> N >> M >> K;
     fertilizer = vector<vector<int>> (N, vector<int> (N));
     nutrition = vector<vector<int>> (N, vector<int> (N, 5));
+    trees = vector<vector<vector<int>>> (N, vector<vector<int>> (N));
 
     for(int i=0; i<N; ++i)
         for(int j=0; j<N; ++j)
