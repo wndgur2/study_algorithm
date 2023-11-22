@@ -4,6 +4,5 @@
 settings.json
 .gitconfig
 .vscode
-*/a.out
-*/*/a.out
-*/*/*/a.out
+a.out
+.*
