@@ -1,20 +1,68 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include<iostream>
+#include<vector>
 using namespace std;
 
-int main(){
-    vector<vector<vector<int>>> a = {{{}}};
+struct B{
+    int time;
+    int enableTime = 0;
+    int nPrioritiy = 0; // indexes of prior Bs
+    vector<B*> to;
+};
+
+vector<B*> getEnabledBs(vector<B> &Bs){
+    vector<B*> result;
+    for(int i=0; i<Bs.size(); ++i)
+        if(Bs[i].nPrioritiy == 0)
+            result.push_back(&Bs[i]);
+
+    return result;
+}
+
+int getMinBuildTime(int numNode, int numEdge){
+    vector<B> Bs (numNode);
     
-    sort(a[0][0].begin(), a[0][0].end());
-
-    // while(a[0][0].size() > 2){
-    //     a[0][0].pop_back();
-    // }
-    for(auto t: a[0][0]){
-        cout << t << ' ';
+    for(int i=0; i<numNode; ++i)
+        cin >> Bs[i].time;
+    
+    int from, to; // from is priority for to
+    for(int i=0; i<numEdge; ++i){
+        cin >> from >> to;
+        Bs[to-1].nPrioritiy++;
+        Bs[from-1].to.push_back(&Bs[to-1]);
     }
-    // cout << a[0][0].back() << endl;
 
+    int idxFinB;
+    cin >> idxFinB;
+    B* finalB = &Bs[idxFinB-1];
+
+    // 최소 시간 계산. from의 길이가 0인 B부터
+    vector<B*> enabledBs = getEnabledBs(Bs);
+
+    while(enabledBs.size()){
+        for(int i=0; i<enabledBs.size(); ++i){
+            B* curB = enabledBs[i];
+            if(curB == finalB)
+                return finalB->enableTime + finalB->time;
+            // to 건물들 업데이트.
+            for(int j=0; j<curB->to.size(); ++j){
+                B* nextB = curB->to[j];
+                if(nextB->enableTime < curB->time + curB->enableTime)
+                    nextB->enableTime = curB->time + curB->enableTime;
+                nextB->nPrioritiy--;
+            }
+        }
+        enabledBs = getEnabledBs(Bs);
+    }
+    cout << "finalB에 도달하지 못했습니다." << endl;
+    return 0;
+}
+
+int main(){
+    int numTest, numNode, numEdge;
+    cin >> numTest;
+    while(numTest--){
+        cin >> numNode >> numEdge;
+        cout << getMinBuildTime(numNode, numEdge) << endl;
+    }
     return 0;
 }
