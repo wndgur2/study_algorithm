@@ -4,6 +4,23 @@
 #include <string>
 using namespace std;
 
+/*
+    - O가 X보다 많으면 invalid
+    - X가 O보다 2개 이상 많으면 invalid
+    - 빙고가 2개 이상 있으면 invalid (* X의 쌍삼 빙고 제외)
+    - 빙고가 없고, 빈 칸이 있으면 invalid
+    - X가 빙고를 했는데 O의 개수가 X의 개수와 같으면 invalid
+    - O가 빙고를 했는데 X의 개수가 O의 개수와 다르면 invalid
+
+    XXX
+    XOO
+    XOO
+
+    XOX
+    OXO
+    XOX
+*/
+
 vector<int> getBingo(char letter, string board){
     // board에 있는 letter의 빙고 개수
     vector<int> result;
@@ -59,12 +76,6 @@ bool getIsXX(string board, vector<int> bingosX){
 }
 
 bool getIsValid(string inpt){
-    // O가 X보다 많으면 invalid
-    // X가 O보다 2개 이상 많으면 invalid
-    // 빙고가 2개 이상 있으면 invalid (* X의 쌍삼 빙고 제외)
-    // 빙고가 없고, 빈 칸이 있으면 invalid
-    // X가 빙고를 했는데 O의 개수가 X의 개수와 같으면 invalid
-    // O가 빙고를 했는데 X의 개수가 O의 개수와 다르면 invalid
 
     int countX = count(inpt.begin(), inpt.end(), 'X');
     int countO = count(inpt.begin(), inpt.end(), 'O');
