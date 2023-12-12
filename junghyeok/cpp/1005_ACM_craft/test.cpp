@@ -1,9 +1,14 @@
 #include<iostream>
 using namespace std;
 
+struct Room{
+    int food;
+};
+
 int main(){
-    int a = 10, b = 3;
-    float c = static_cast< float >(a)/static_cast< float >(b);
-    cout << c << endl;
+    Room* a = NULL;
+    if(a) cout << "A";
+    else cout << "B";
+    cout << a;
     return 0;
 }
